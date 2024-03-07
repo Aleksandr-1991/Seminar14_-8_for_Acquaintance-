@@ -6,7 +6,7 @@ int GetNumber(string message)
     bool isCorrect = false;
     int result = 0;
     while (!isCorrect)
-        if (int.TryParse(Console.ReadLine(), out result))
+        if (int.TryParse(Console.ReadLine()!, out result))
             isCorrect = true;
         else
             Console.WriteLine("Введено не число. Повторите ввод.");
