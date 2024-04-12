@@ -9,7 +9,7 @@ int GetNumber(string message)
         if (int.TryParse(Console.ReadLine()!, out result))
             isCorrect = true;
         else
-            Console.WriteLine("Введено не число. Повторите ввод.");
+            Console.WriteLine("Введено не число (либо не целое число). Повторите ввод.");
 
     return result;
 }

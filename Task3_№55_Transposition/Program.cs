@@ -1,14 +1,23 @@
 ﻿// №55. Прога в 2d-массиве мен местами столбцы и строки.
 
-int Promt (string text){
-    Console.WriteLine(text);
-    return int.Parse(Console.ReadLine()!);
+int GetNumber(string message)
+{
+    Console.WriteLine(message);
+    bool isCorrect = false;
+    int result = 0;
+    while (!isCorrect)
+        if (int.TryParse(Console.ReadLine()!, out result))
+            isCorrect = true;
+        else
+            Console.WriteLine("Введено не число (либо не целое число). Повторите ввод.");
+
+    return result;
 }
 
 int [,] GetMatrix()
 {
-    int m = Promt("Введите значение m, отвечающее за кол-во строк: ");
-    int n = Promt("Введите значение n, отвечающее за кол-во столбцов: ");
+    int m = GetNumber("Введите значение m, отвечающее за кол-во строк: ");
+    int n = GetNumber("Введите значение n, отвечающее за кол-во столбцов: ");
     int k = 0;
     int [,]  array2d = new int [m, n];
     for (int i = 0; i < m; i++){
